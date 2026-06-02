@@ -10,11 +10,14 @@ st.set_page_config(
 )
 
 st.title("Stock Dashboard")
+
 @st.cache_data
 def load_watchlist():
     app_dir = Path(__file__).parent
     watchlist_path = app_dir / "data" / "watchlist.csv"
     return pd.read_csv(watchlist_path)
+
+watchlist_df = load_watchlist()
 
 categories = sorted(watchlist_df["category"].unique())
 
@@ -23,6 +26,7 @@ selected_categories = st.multiselect(
     categories,
     default=["Owned", "Mag7"]
 )
+
 selected_watchlist = watchlist_df[
     watchlist_df["category"].isin(selected_categories)
 ]
@@ -38,6 +42,22 @@ extra_tickers = extra_tickers_input.upper().replace(",", " ").split()
 
 tickers = default_tickers + extra_tickers
 tickers = list(dict.fromkeys(tickers))
+
+st.write("Loaded tickers:", ", ".join(tickers))
+
+owned_tickers = watchlist_df[
+    watchlist_df["category"] == "Owned"
+]["ticker"].tolist()
+
+default_chart_tickers = [
+    ticker for ticker in owned_tickers if ticker in tickers
+]
+
+chart_tickers = st.multiselect(
+    "Select tickers to chart",
+    tickers,
+    default=default_chart_tickers
+)
 
 period = st.selectbox(
     "Select period",
