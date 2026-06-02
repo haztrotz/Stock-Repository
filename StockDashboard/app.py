@@ -2,6 +2,7 @@ import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
 import pandas as pd
+from pathlib import Path
 
 st.set_page_config(
     page_title="Stock Dashboard",
@@ -11,8 +12,9 @@ st.set_page_config(
 st.title("Stock Dashboard")
 @st.cache_data
 def load_watchlist():
-    return pd.read_csv("data/watchlist.csv")
-watchlist_df = load_watchlist()
+    app_dir = Path(__file__).parent
+    watchlist_path = app_dir / "data" / "watchlist.csv"
+    return pd.read_csv(watchlist_path)
 
 categories = sorted(watchlist_df["category"].unique())
 
