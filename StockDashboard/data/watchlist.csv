@@ -1,0 +1,29 @@
+category,ticker,name
+Owned,NVDA,Nvidia
+Owned,VRT,Vertiv
+Owned,COPX,Global X Copper Miners ETF
+Mag7,AAPL,Apple
+Mag7,MSFT,Microsoft
+Mag7,NVDA,Nvidia
+Mag7,AMZN,Amazon
+Mag7,GOOGL,Alphabet
+Mag7,META,Meta
+Mag7,TSLA,Tesla
+Pickaxe,VRT,Vertiv
+Pickaxe,GEV,GE Vernova
+Pickaxe,ETN,Eaton
+Pickaxe,PWR,Quanta Services
+Pickaxe,SMCI,Super Micro Computer
+Energy,CCJ,Cameco
+Energy,CEG,Constellation Energy
+Energy,VST,Vistra
+Energy,NEE,NextEra Energy
+Precious Metals,SLV,iShares Silver Trust
+Precious Metals,SIL,Global X Silver Miners ETF
+Precious Metals,SILJ,Amplify Junior Silver Miners ETF
+Copper,COPX,Global X Copper Miners ETF
+Copper,FCX,Freeport-McMoRan
+Copper,SCCO,Southern Copper
+Australia,BHP.AX,BHP
+Australia,RIO.AX,Rio Tinto
+Australia,FMG.AX,Fortescue
